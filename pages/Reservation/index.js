@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function index() {
+export default function Reservation() {
   return (
     <div>index</div>
   )
