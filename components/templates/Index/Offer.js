@@ -5,7 +5,6 @@ export default function Offer() {
   const [email, setEmail] = useState("");
   const handleJoinOffer = async (e) => {
     e.preventDefault();
-    console.log(email);
     if (email.length >= 5) {
       const response = await fetch("http://localhost:4000/newsLetters", {
         method: "POST",
