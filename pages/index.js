@@ -36,6 +36,7 @@ export async function getStaticProps(){
         menu:menuData,
         TestimonialData
       }
-    }
+    },
+    revalidate:60*60*12
   }
 }

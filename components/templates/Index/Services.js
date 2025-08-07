@@ -13,7 +13,7 @@ export default function Services({services}) {
             <div className="row">
                 {services.map(service=>(
 
-                <ServiceItem key={service.id} img={service.img} title={service.title} icon="faTruck" desc={service.desc}/>
+                <ServiceItem key={service.id} img={service.img} title={service.title} icon={service.icon} desc={service.desc}/>
                 ))}
 
             </div>
