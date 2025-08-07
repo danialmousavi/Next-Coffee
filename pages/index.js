@@ -4,6 +4,7 @@ import Offer from '@/components/templates/Index/Offer'
 import ReseveTable from '@/components/templates/Index/ReseveTable'
 import Services from '@/components/templates/Index/Services'
 import Slider from '@/components/templates/Index/Slider'
+import Testimonial from '@/components/templates/Index/Testimonial'
 import React from 'react'
 
 export default function index({data}) {
@@ -15,6 +16,7 @@ export default function index({data}) {
       <Offer/>
       <Menu menu={data.menu}/>
       <ReseveTable/>
+      <Testimonial TestimonialData={data.TestimonialData}/>
     </>
   )
 }
@@ -24,11 +26,15 @@ export async function getStaticProps(){
 
   const resMenu=await fetch("http://localhost:4000/menu")
   const menuData=await resMenu.json();
+
+  const resTestimonial=await fetch("http://localhost:4000/comments");
+  const TestimonialData=await resTestimonial.json();
   return {
     props:{
       data:{
         services,
-        menu:menuData
+        menu:menuData,
+        TestimonialData
       }
     }
   }
