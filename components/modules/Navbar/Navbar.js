@@ -56,9 +56,9 @@ function Navbar() {
                 </Link>
               </div>
             </div>
-            <a href="contact.html" className={`${styles.nav_link}`}>
+            <Link href="/contact" className={`${styles.nav_link}`}>
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
