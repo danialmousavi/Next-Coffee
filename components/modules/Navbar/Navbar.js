@@ -1,16 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "@/styles/Navbar.module.css";
 import Link from "next/link";
-
+import { config } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
 function Navbar() {
+  const [search , setSearch]=useState("");
+  const route=useRouter();
+  const searchHandler=()=>{
+    if (search.trim()) {
+      route.push(`/search?q=${search}`);
+      setSearch("")
+    }
+  }
+  const searchHandlerWithEnter=(event)=>{
+    if (event.keyCode === 13) {
+      if (search.trim()) {
+        route.push(`/search?q=${search}`);
+        setSearch("")
+      }
+    }
+  }
   return (
     <div className={`container-fluid p-0 ${styles.nav_bar}`}>
       <nav
         className={`${styles.navbar} ${styles.navbar_expand_lg} bg-none navbar-dark py-3`}
       >
+           <div className="d-flex align-items-center position-relative">
         <Link href="/" className={`${styles.navbar_brand} px-lg-4 m-0`}>
           <h1 className="m-0 display-4 text-uppercase text-white">Next-Coffee</h1>
         </Link>
+          <input
+            value={search}
+            onChange={(event) => setSearch(event.target.value)}
+            onKeyDown={searchHandlerWithEnter}
+            type="text"
+            className={styles.search_input}
+            placeholder="Search..."
+          />
+          <FontAwesomeIcon
+            onClick={searchHandler}
+            className={styles.search_icon}
+            icon={faSearch}
+          />
+          </div>
         <button
           type="button"
           className={`${styles.navbar_toggler}`}
