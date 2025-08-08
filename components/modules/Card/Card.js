@@ -1,8 +1,10 @@
+import Link from "next/link";
 import React from "react";
 
-export default function Card({img,title,desc,price}) {
+export default function Card({img,title,desc,price,id}) {
   return (
-    <div className="row align-items-center mb-5">
+    <Link href={`/product/${id}`}>
+        <div className="row align-items-center mb-5">
       <div className="col-4 col-sm-3">
         <img
           className="w-100 rounded-circle mb-3 mb-sm-0"
@@ -18,5 +20,6 @@ export default function Card({img,title,desc,price}) {
         </p>
       </div>
     </div>
+    </Link>
   );
 }
