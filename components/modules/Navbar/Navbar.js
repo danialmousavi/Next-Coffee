@@ -9,7 +9,7 @@ function Navbar() {
   const [search, setSearch] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const route = useRouter();
-
+  
   const searchHandler = () => {
     if (search.trim()) {
       route.push(`/search?q=${search}`);
@@ -90,17 +90,17 @@ function Navbar() {
 
             <Link
               href="/"
-              className={`${styles.nav_link} ${styles.active_nav_link}`}
+              className={`${styles.nav_link} ${route.pathname=="/"?styles.active_nav_link:""}`}
             >
               Home
             </Link>
-            <Link href="/about" className={`${styles.nav_link}`}>
+            <Link href="/about" className={`${styles.nav_link} ${route.pathname=="/about"?styles.active_nav_link:""}`}>
               About
             </Link>
-            <Link href="/services" className={`${styles.nav_link}`}>
+            <Link href="/services" className={`${styles.nav_link} ${route.pathname=="/services"?styles.active_nav_link:""}`}>
               Service
             </Link>
-            <Link href="/menu" className={`${styles.nav_link}`}>
+            <Link href="/menu" className={`${styles.nav_link} ${route.pathname=="/menu"?styles.active_nav_link:""}`}>
               Menu
             </Link>
             <div className={`${styles.dropdown}`}>
@@ -115,19 +115,20 @@ function Navbar() {
               >
                 <Link
                   href="/reservation"
-                  className={`${styles.dropdown_item}`}
+                  className={`${styles.dropdown_item} ${route.pathname=="/reservation"?styles.active_nav_link:""}`}
+                  
                 >
                   Reservation
                 </Link>
                 <Link
                   href="/testimonial"
-                  className={`${styles.dropdown_item}`}
+                  className={`${styles.dropdown_item}${route.pathname=="/testimonial"?styles.active_nav_link:""} `}
                 >
                   Testimonial
                 </Link>
               </div>
             </div>
-            <Link href="/contact" className={`${styles.nav_link}`}>
+            <Link href="/contact" className={`${styles.nav_link} ${route.pathname=="/contact"?styles.active_nav_link:""}`}>
               Contact
             </Link>
           </div>
