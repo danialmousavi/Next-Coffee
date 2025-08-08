@@ -2,7 +2,6 @@ import TestimonialItem from '@/components/modules/TestimonialItem/TestimonialIte
 import React from 'react'
 
 export default function Comments({commentsData}) {
-    console.log("Commentsdata",commentsData);
     
   return (
     <div className="container-fluid py-5">

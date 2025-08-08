@@ -23,7 +23,6 @@ const [person,setPerson]=useState("");
             },
             body:JSON.stringify(reservationData)
         })
-        console.log(res);
         if(res.status==201){
             Swal.fire({
                 title:"Great! you reserved a table",

@@ -2,7 +2,6 @@ import ServiceItem from '@/components/modules/ServiceItem/ServiceItem';
 import React from 'react'
 
 export default function ServicesDetail({serviceData}) {
-  console.log(serviceData);
   
   return (
     <>

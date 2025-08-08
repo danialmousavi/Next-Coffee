@@ -17,11 +17,10 @@ export async function getServerSideProps(context) {
   const data=await res.json();
 
   const searchResults=data.filter(item=>item.type.toLowerCase().includes(query.q.toLowerCase())||item.title.toLowerCase().includes(query.q.toLowerCase()))
-  console.log(searchResults);
   return{
     props:{
       searchResults
-    }
+    },
   }
   
 }

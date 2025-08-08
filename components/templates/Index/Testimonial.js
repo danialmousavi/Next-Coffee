@@ -2,7 +2,6 @@ import TestimonialItem from '@/components/modules/TestimonialItem/TestimonialIte
 import React from 'react'
 
 export default function Testimonial({TestimonialData}) {
-    console.log("TestimonialData",TestimonialData);
     
   return (
     <div className="container-fluid py-5">

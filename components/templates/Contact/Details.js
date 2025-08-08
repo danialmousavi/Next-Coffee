@@ -22,7 +22,6 @@ export default function ContactDetails() {
       },
       body: JSON.stringify(newMessage),
     });
-    console.log(res);
     if (res.status == 201) {
       Swal.fire({
         title: "thanks for your message",

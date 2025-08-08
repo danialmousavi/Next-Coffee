@@ -35,7 +35,9 @@ export async function getStaticProps(context) {
       props:{
         product,
         productComments
-      }
+      },
+    revalidate:60*60*12
+
     }
     
 }

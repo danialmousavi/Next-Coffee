@@ -13,7 +13,6 @@ export default function Offer() {
         },
         body: JSON.stringify({ email }),
       });
-      console.log(response);
       if (response.status == 201) {
         Swal.fire({
           title: "You joined successfully",
